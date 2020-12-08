@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
@@ -12,6 +13,13 @@ const handleServerErrors = require('./middlewares/hadleServerErrors');
 const router = require('./routes');
 
 const app = express();
+
+app.use(cors({
+  origin: [
+    'http://localhost:3001',
+  ],
+  credentials: true,
+}));
 
 mongoose.connect(DB_URL, {
   useNewUrlParser: true,

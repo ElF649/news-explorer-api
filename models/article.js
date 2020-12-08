@@ -5,14 +5,14 @@ const articleSchema = new mongoose.Schema({
   keyword: {
     type: String,
     required: true,
-    minlength: 2,
+    minlength: 1,
     maxlength: 30,
   },
   title: {
     type: String,
     required: true,
     minlength: 2,
-    maxlength: 30,
+    maxlength: 100,
   },
   text: {
     type: String,
