@@ -19,7 +19,7 @@ module.exports.login = (req, res, next) => {
           httpOnly: true,
           sameSite: true,
         })
-        .send({ message: 'Авторизация прошла успешно' }, token);
+        .send({ message: 'Авторизация прошла успешно', token });
     })
     .catch(next);
 };
